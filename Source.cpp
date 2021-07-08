@@ -5,6 +5,8 @@ using namespace std;
 class Solution
 {
 public:
+	//Moore's Voting Algoritm
+	//Fuction to find the most repeated element
 	int candidate(vector <int> a, int size)
 	{
 		int count = 1, maj_index = 0;
@@ -22,6 +24,8 @@ public:
 		}
 		return a[maj_index];
 	}
+	/*Fuction to verify the most repeated element
+		occurs more than n/2 times*/  
 	int majorityElement(vector <int> a, int size)
 	{
 		int count = 0, ele;
@@ -32,7 +36,7 @@ public:
 		if (count > size / 2)
 			return ele;
 		else
-			return -1;
+			return 0;
 	}
 };
 int main()
@@ -49,8 +53,14 @@ int main()
 		arr.push_back(ele);
 	}
 	Solution s;
-	//for (int i = 0; i < n; i++)
-		//cout << arr[i];
-	cout << "Majority element = " << s.majorityElement(arr, n);
+	cout << "The array is: ";
+	// The array is
+	for (int i = 0; i < n; i++)
+		cout << arr[i] << " ";
+	int maj_ele = s.majorityElement(arr, n);
+	if (maj_ele)
+		cout << "\n Majority element = " << maj_ele << endl;
+	else
+		cout << "\n No majority element " << endl;
 	return 0;
 }
